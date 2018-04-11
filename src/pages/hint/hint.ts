@@ -3,9 +3,9 @@ import { IonicPage } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'page-hint',
+  templateUrl: 'hint.html'
 })
-export class HomePage {
+export class HintPage {
   constructor() {}
 }

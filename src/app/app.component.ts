@@ -1,12 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
-import { TabsPage } from '../pages/tabs/tabs';
+import { NavController, Nav } from 'ionic-angular';
 
 @Component({
-  templateUrl: "app.html"
+  templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage: any = TabsPage;
+  @ViewChild(Nav) nav: NavController;
+  
+  rootPage: any = 'HomePage';
+  pages: Array<{ title: string; root: string; icon: string }> = [
+    { title: 'Classificação', root: 'HomePage', icon: 'ios-list' },
+    { title: 'Palpites', root: 'HintPage', icon: 'ios-football' },
+    { title: 'Regulamento', root: 'RulesPage', icon: 'ios-paper' }
+  ];
 
   constructor() {}
 }

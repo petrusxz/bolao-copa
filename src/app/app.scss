@@ -1,16 +1,69 @@
-// http://ionicframework.com/docs/theming/
-
-
-// App Global Sass
-// --------------------------------------------------
-// Put style rules here that you want to apply globally. These
-// styles are for the entire app and not just one component.
-// Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
-//
-// Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
-//
-// To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
+.menu-inner {
+  background: url(./../assets/img/menu-background.png) !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+ion-menu {
+  img {
+    display: block;
+    margin: 10px auto;
+  }
+  .item {
+    background: map-get($colors, copa-light);
+    color: map-get($colors, copa-gold);
+    margin-bottom: 2px;
+  }
+}
+.fab {
+  background: transparent !important;
+  box-shadow: unset !important;
+  margin-top: -10px;
+}
+ion-fab-list {
+  margin: 50px 0;
+  left: -128px;
+  align-items: flex-end;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  .icon {
+    font-size: 3em;
+    margin-bottom: 5px;
+  }
+  ion-row {
+    width: 100%;
+    p {
+      display: table;
+      width: 60px;
+      border-bottom: 1px solid;
+      margin-top: 8px;
+      margin-bottom: 0;
+    }
+    p[no-margin] {
+      width: fit-content;
+      border: unset !important;
+    }
+  }
+  .button {
+    text-transform: initial;
+  }
+}
+ion-content {
+  background: url(./../assets/img/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+ion-navbar {
+  .toolbar-background {
+    background: url(./../assets/img/menu-background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .toolbar-title {
+    color: white;
+    text-align: center;
+    margin-right: 58px;
+  }
+  .bar-button-default-md {
+    color: map-get($colors, copa-gold);
+  }
+}

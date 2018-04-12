@@ -9,14 +9,14 @@
 </ion-menu>
 
 <ion-fab right top>
-    <button ion-fab>
+    <button ion-fab #fabCtrl>
         <ion-icon name="ios-contact"></ion-icon>
     </button>
     <ion-fab-list side="bottom">
         <div text-center padding>
             <ion-icon name="md-hand"></ion-icon>
             <p>Você não está logado!</p>
-            <button ion-button color="copa-gold">
+            <button ion-button color="copa-gold" (click)="navigate('SignInPage')">
                 Acesse sua conta
             </button>
             <ion-row justify-content-around margin-top>
@@ -24,7 +24,7 @@
                 <p no-margin>Ou</p>
                 <p></p>
             </ion-row>
-            <button ion-button clear color="copa-red">
+            <button ion-button clear color="copa-red" (click)="navigate('SignUpPage')">
                 Cadastre-se
             </button>
         </div>

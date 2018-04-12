@@ -67,3 +67,14 @@ ion-navbar {
     color: map-get($colors, copa-gold);
   }
 }
+.item {
+  background-color: transparent;
+}
+.label {
+  color: rgba(0, 0, 0, 0.25);
+}
+.item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus) .item-inner,
+.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner,
+.item-input.item-input-has-focus .item-inner {
+  box-shadow: unset !important;
+}

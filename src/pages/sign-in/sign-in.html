@@ -6,6 +6,42 @@
 
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+  
+  <ion-list padding>
+
+    <form [formGroup]="signInForm" (ngSubmit)="signIn()">
+
+      <ion-item no-padding>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="email" formControlName="email" maxLength="50" (ionBlur)="validateFields()"></ion-input>
+      </ion-item>
+
+      <!-- Errors Messages -->
+      <ion-note color="copa-red" *ngIf="signInForm.get('email').hasError('pattern') && signInForm.pending">
+        Email inválido.
+      </ion-note>
+      <ion-note color="copa-red" *ngIf="signInForm.get('email').hasError('required') && signInForm.get('email').touched && signInForm.pending">
+        Email requerido.
+      </ion-note>
+
+      <ion-item no-padding>
+        <ion-label floating>Senha</ion-label>
+        <ion-input type="password" formControlName="password" maxLength="26" (ionBlur)="validateFields()"></ion-input>
+      </ion-item>
+
+      <!-- Errors Messages -->
+      <ion-note color="copa-red" *ngIf="signInForm.get('password').hasError('minlength') && signInForm.pending">
+        Senha deve conter no mínimo 6 caracteres.
+      </ion-note>
+      <ion-note color="copa-red" *ngIf="signInForm.get('password').hasError('required') && signInForm.get('password').touched && signInForm.pending">
+        Senha requerida.
+      </ion-note>
+
+      <button ion-button margin-top type="submit" color="copa-red">Entrar</button>
+
+    </form>
+
+  </ion-list>
 
 </ion-content>

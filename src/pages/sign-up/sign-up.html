@@ -1,60 +1,60 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Cadastro</ion-title>
+    <ion-title>Novo Usuário</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 <ion-content>
 
-    <ion-list padding>
+  <ion-list margin>
 
-        <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
-    
-          <ion-item no-padding>
-            <ion-label floating>Email</ion-label>
-            <ion-input type="email" formControlName="email" maxLength="50" (ionBlur)="validateFields()"></ion-input>
-          </ion-item>
-    
-          <!-- Errors Messages -->
-          <ion-note color="danger" *ngIf="signUpForm.get('email').hasError('pattern') && signUpForm.pending">
-            Email inválido.
-          </ion-note>
-          <ion-note color="danger" *ngIf="signUpForm.get('email').hasError('required') && signUpForm.get('email').touched && signUpForm.pending">
-            Email requerido.
-          </ion-note>
-    
-          <ion-item no-padding>
-            <ion-label floating>Senha</ion-label>
-            <ion-input type="password" formControlName="password" maxLength="26" (ionBlur)="validateFields()"></ion-input>
-          </ion-item>
-    
-          <!-- Errors Messages -->
-          <ion-note color="danger" *ngIf="signUpForm.get('password').hasError('minlength') && signUpForm.pending">
-            Senha deve conter no mínimo 6 caracteres.
-          </ion-note>
-          <ion-note color="danger" *ngIf="signUpForm.get('password').hasError('required') && signUpForm.get('password').touched && signUpForm.pending">
-            Senha requerida.
-          </ion-note>
-          
-          <ion-item no-padding>
-            <ion-label floating>Confirmação de senha</ion-label>
-            <ion-input type="password" formControlName="passwordConfirmation" maxLength="26" (ionBlur)="validateFields()"></ion-input>
-          </ion-item>
-    
-          <!-- Errors Messages -->
-          <ion-note color="danger" *ngIf="signUpForm.hasError('nomatch') && !signUpForm.get('passwordConfirmation').hasError('required') && signUpForm.pending">
-            Confirmação de senha incorreta.
-          </ion-note>
-          <ion-note color="danger" *ngIf="signUpForm.get('passwordConfirmation').hasError('required') && signUpForm.get('passwordConfirmation').touched && signUpForm.pending">
-            Senha requerida.
-          </ion-note>
-    
-          <button ion-item no-lines block margin-top type="submit" color="primary">Sign Up</button>
-    
-        </form>
-    
-      </ion-list>    
+    <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+
+      <ion-item no-padding>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="email" formControlName="email" maxLength="50" (ionBlur)="validateFields()"></ion-input>
+      </ion-item>
+
+      <!-- Errors Messages -->
+      <ion-note color="copa-red" *ngIf="signUpForm.get('email').hasError('pattern') && signUpForm.pending">
+        Email inválido.
+      </ion-note>
+      <ion-note color="copa-red" *ngIf="signUpForm.get('email').hasError('required') && signUpForm.get('email').touched && signUpForm.pending">
+        Email requerido.
+      </ion-note>
+
+      <ion-item no-padding>
+        <ion-label floating>Senha</ion-label>
+        <ion-input type="password" formControlName="password" maxLength="26" (ionBlur)="validateFields()"></ion-input>
+      </ion-item>
+
+      <!-- Errors Messages -->
+      <ion-note color="copa-red" *ngIf="signUpForm.get('password').hasError('minlength') && signUpForm.pending">
+        Senha deve conter no mínimo 6 caracteres.
+      </ion-note>
+      <ion-note color="copa-red" *ngIf="signUpForm.get('password').hasError('required') && signUpForm.get('password').touched && signUpForm.pending">
+        Senha requerida.
+      </ion-note>
+
+      <ion-item no-padding>
+        <ion-label floating>Confirmação de senha</ion-label>
+        <ion-input type="password" formControlName="passwordConfirmation" maxLength="26" (ionBlur)="validateFields()"></ion-input>
+      </ion-item>
+
+      <!-- Errors Messages -->
+      <ion-note color="copa-red" *ngIf="signUpForm.hasError('nomatch') && !signUpForm.get('passwordConfirmation').hasError('required') && signUpForm.pending">
+        Confirmação de senha incorreta.
+      </ion-note>
+      <ion-note color="copa-red" *ngIf="signUpForm.get('passwordConfirmation').hasError('required') && signUpForm.get('passwordConfirmation').touched && signUpForm.pending">
+        Senha requerida.
+      </ion-note>
+
+      <button ion-button margin-top type="submit" color="copa-red">Cadastrar</button>
+
+    </form>
+
+  </ion-list>
 
 </ion-content>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
 
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 
@@ -15,7 +15,9 @@ export class SignUpPage {
 
   private signUpForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private afAuth: AngularFireAuth) {}
+  constructor(public navCtrl: NavController, private formBuilder: FormBuilder, private afAuth: AngularFireAuth) {
+    this.validationSetup();
+  }
 
   validationSetup(): void {
     const emailValidator = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;

@@ -1,20 +1,33 @@
 <ion-grid>
     <ion-row>
         <ion-col>
-            <ion-list>
-                <ion-item *ngFor="let team of teams | async">
-                    {{team.name}}
-                    <ion-input type="number" [readonly]="readonly"></ion-input>
-                    <img src="assets/icon/{{variavel}}.png" />
-                </ion-item>
-            </ion-list>
+            <ion-card *ngFor="let group of groups">
+                <ion-card-header>
+                    {{group}}
+                </ion-card-header>
+                <ion-list>
+                    <ion-row *ngFor="let match of matches">
+                        <ion-col>{{match.team1}}</ion-col>
+                        <ion-col col-6>
+                            <ion-row justify-content-around>
+                                <ion-col col-auto>
+                                    <ion-input type="tel" [(ngModel)]="match.score1"></ion-input>
+                                </ion-col>
+                                <ion-col col-auto>
+                                    <h1>X</h1>
+                                </ion-col>
+                                <ion-col col-auto>
+                                    <ion-input type="tel" [(ngModel)]="match.score2"></ion-input>
+                                </ion-col>
+                            </ion-row>
+                        </ion-col>
+                        <ion-col>{{match.team2}}</ion-col>
+                    </ion-row>
+                </ion-list>
+            </ion-card>
         </ion-col>
         <ion-col>
-            <ion-list>
-                <ion-item *ngFor="let match of matches | async">
-                    {{match.idTeam1}} - {{match.idTeam2}}
-                </ion-item>
-            </ion-list>
+
         </ion-col>
     </ion-row>
 </ion-grid>

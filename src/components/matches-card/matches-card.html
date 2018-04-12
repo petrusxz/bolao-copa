@@ -1,0 +1,20 @@
+<ion-grid>
+    <ion-row>
+        <ion-col>
+            <ion-list>
+                <ion-item *ngFor="let team of teams | async">
+                    {{team.name}}
+                    <ion-input type="number" [readonly]="readonly"></ion-input>
+                    <img src="assets/icon/{{variavel}}.png" />
+                </ion-item>
+            </ion-list>
+        </ion-col>
+        <ion-col>
+            <ion-list>
+                <ion-item *ngFor="let match of matches | async">
+                    {{match.idTeam1}} - {{match.idTeam2}}
+                </ion-item>
+            </ion-list>
+        </ion-col>
+    </ion-row>
+</ion-grid>

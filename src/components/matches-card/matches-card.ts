@@ -10,8 +10,8 @@ export class MatchesCardComponent {
 
   @Input() teams: TeamModel[];
   @Input() matches: MatchModel[];
+  @Input() readonly: boolean;
 
-  constructor() {
-  }
+  constructor() {}
 
 }

@@ -11,46 +11,6 @@
 
 <ion-content padding>
 
-    <ion-row>
-        <ion-col>
-            <ion-list no-margin>
-                <ion-item>
-                    <ion-label floating>name</ion-label>
-                    <ion-input type="text" [(ngModel)]="team.name"></ion-input>
-                </ion-item>
-
-                <ion-item>
-                    <ion-label floating>icon</ion-label>
-                    <ion-input type="text" [(ngModel)]="team.icon"></ion-input>
-                </ion-item>
-
-                <button ion-button (click)="saveTeam()">saveTeam</button>
-            </ion-list>
-        </ion-col>
-        <ion-col>
-            <ion-item>
-                <ion-label floating>idTeam1</ion-label>
-                <ion-input type="text" [(ngModel)]="match.idTeam1"></ion-input>
-            </ion-item>
-            <ion-item>
-                <ion-label floating>idTeam2</ion-label>
-                <ion-input type="text" [(ngModel)]="match.idTeam2"></ion-input>
-            </ion-item>
-
-            <ion-item>
-                <ion-label floating>group</ion-label>
-                <ion-input type="text" [(ngModel)]="match.group"></ion-input>
-            </ion-item>
-            
-            <button ion-button (click)="saveMatch()">saveMatch</button>
-        </ion-col>
-    </ion-row>
-    <ion-row>
-        <ion-list>
-            <ion-item *ngFor="let a of teamCtrl">
-                {{a.name}} - {{a.id}}
-            </ion-item>
-        </ion-list>
-    </ion-row>
-
+    <matches-card [teams]="teams" [matches]="matches"></matches-card>
+    
 </ion-content>

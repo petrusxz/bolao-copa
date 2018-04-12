@@ -4,11 +4,47 @@
         <button ion-button menuToggle icon-only>
             <ion-icon name="menu"></ion-icon>
         </button>
-        <ion-title>Classificação</ion-title>
+        <ion-title>Resultados</ion-title>
     </ion-navbar>
 
 </ion-header>
 
 <ion-content padding>
+
+    <ion-row>
+        <ion-col>
+            <ion-list no-margin>
+                <ion-item>
+                    <ion-label floating>name</ion-label>
+                    <ion-input type="text" [(ngModel)]="team.name"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label floating>icon</ion-label>
+                    <ion-input type="text" [(ngModel)]="team.icon"></ion-input>
+                </ion-item>
+
+                <button ion-button (click)="saveTeam()">saveTeam</button>
+            </ion-list>
+        </ion-col>
+        <ion-col>
+            <ion-item>
+                <ion-label floating>team1</ion-label>
+                <ion-input type="text" [(ngModel)]="match.team1"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label floating>team2</ion-label>
+                <ion-input type="text" [(ngModel)]="match.team2"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label floating>group</ion-label>
+                <ion-input type="text" [(ngModel)]="match.group"></ion-input>
+            </ion-item>
+            
+            <button ion-button (click)="saveMatch()">saveMatch</button>
+        </ion-col>
+    </ion-row>
 
 </ion-content>

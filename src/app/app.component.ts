@@ -10,7 +10,7 @@ export class MyApp {
   
   rootPage: any = 'HomePage';
   pages: Array<{ title: string; root: string; icon: string }> = [
-    { title: 'Classificação', root: 'HomePage', icon: 'ios-list' },
+    { title: 'Resultados', root: 'HomePage', icon: 'ios-list' },
     { title: 'Palpites', root: 'HintPage', icon: 'ios-football' },
     { title: 'Regulamento', root: 'RulesPage', icon: 'ios-paper' }
   ];

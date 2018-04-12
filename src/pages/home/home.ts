@@ -18,6 +18,7 @@ export class HomePage {
   private match: MatchModel = new MatchModel();
   private matchesCollection: AngularFirestoreCollection<MatchModel>;
 
+  teamCtrl = [];
   constructor(private afs: AngularFirestore) {}
 
   saveTeam() {
@@ -29,6 +30,8 @@ export class HomePage {
       .set(Object.assign({}, this.team))
       .then(() => {
         console.log('Item added.');
+        this.teamCtrl.push(this.team);
+        console.log(this.team.name + ' = ' + this.team.id);
         this.team = new TeamModel();
       });
   }

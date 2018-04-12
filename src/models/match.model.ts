@@ -1,7 +1,7 @@
 export class MatchModel {
   id: string = null;
-  team1: string = null;
-  team2: string = null;
+  idTeam1: string = null;
+  idTeam2: string = null;
   group: string = null;
   score1: number = null;
   score2: number = null;

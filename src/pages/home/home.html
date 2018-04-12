@@ -29,13 +29,12 @@
         </ion-col>
         <ion-col>
             <ion-item>
-                <ion-label floating>team1</ion-label>
-                <ion-input type="text" [(ngModel)]="match.team1"></ion-input>
+                <ion-label floating>idTeam1</ion-label>
+                <ion-input type="text" [(ngModel)]="match.idTeam1"></ion-input>
             </ion-item>
-
             <ion-item>
-                <ion-label floating>team2</ion-label>
-                <ion-input type="text" [(ngModel)]="match.team2"></ion-input>
+                <ion-label floating>idTeam2</ion-label>
+                <ion-input type="text" [(ngModel)]="match.idTeam2"></ion-input>
             </ion-item>
 
             <ion-item>
@@ -45,6 +44,13 @@
             
             <button ion-button (click)="saveMatch()">saveMatch</button>
         </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-list>
+            <ion-item *ngFor="let a of teamCtrl">
+                {{a.name}} - {{a.id}}
+            </ion-item>
+        </ion-list>
     </ion-row>
 
 </ion-content>

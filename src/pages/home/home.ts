@@ -6,6 +6,7 @@ import {
   AngularFirestore
 } from 'angularfire2/firestore';
 import { MatchModel } from '../../models/match.model';
+import { Observable } from '@firebase/util';
 
 @IonicPage()
 @Component({
@@ -17,9 +18,14 @@ export class HomePage {
   private teamsCollection: AngularFirestoreCollection<TeamModel>;
   private match: MatchModel = new MatchModel();
   private matchesCollection: AngularFirestoreCollection<MatchModel>;
+  teams: Observable<TeamModel[]>;
+  matches: Observable<MatchModel[]>;
 
   teamCtrl = [];
-  constructor(private afs: AngularFirestore) {}
+  constructor(private afs: AngularFirestore) {
+    this.teamsCollection = this.afs.collection<TeamModel>('teams');
+    // this.teams = this.teamsCollection.valueChanges();
+  }
 
   saveTeam() {
     this.team.id = this.afs.createId();
